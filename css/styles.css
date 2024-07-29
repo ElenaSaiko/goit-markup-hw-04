@@ -357,9 +357,12 @@ a {
   align-items: center;
 }
 
-.soc-icon {
+.soc-icon-list {
   width: 40px;
   height: 40px;
+}
+
+.soc-icon {
   background-color: #4d5ae5;
   border-radius: 50%;
   display: flex;
