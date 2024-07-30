@@ -2,6 +2,9 @@ body {
   font-family: "Roboto", sans-serif;
   color: #434455;
   background-color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 ul,
@@ -19,22 +22,31 @@ h5,
 h6,
 p {
   margin: 0;
-  padding: 0;
 }
-
-/*Header*/
 
 a {
   text-decoration: none;
   color: inherit;
   display: inline-block;
-  margin-bottom: 16px;
+}
+
+.img {
+  display: block;
 }
 
 .container {
   max-width: 1158px;
   padding: 0 15px;
   margin: 0 auto;
+  width: 100%;
+}
+
+/*Header*/
+
+.page-header {
+  border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -46,22 +58,7 @@ a {
 .header-nav {
   display: flex;
   align-items: center;
-}
-
-.page-header {
-  border-bottom: 1px solid #e7e9fc;
-  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
-    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
-}
-
-.page-footer {
-  padding: 100px 0;
-  background-color: #2e2f42;
-}
-
-.page-section {
-  background-color: #2e2f42;
-  padding: 188px 0 188px;
+  justify-content: space-between;
 }
 
 .logo {
@@ -72,22 +69,32 @@ a {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-}
-
-.header-logo .logo-part {
-  color: #2e2f42;
-}
-
-.header-logo {
-  padding: 24px 0;
+  text-transform: uppercase;
   margin-right: 76px;
+  text-decoration: none;
 }
 
-.footer-logo .logo-part {
-  color: #f4f4fd;
+.logo-part {
+  color: #2e2f42;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-decoration: none;
 }
 
-.nav-link {
+a.logo .logo-header {
+  margin-right: 78px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-link-header {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -99,12 +106,17 @@ a {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link.current {
-  position: relative;
-  color: #404bbf;
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav-link.current::after {
+.nav-link-header.current {
+  position: relative;
+}
+
+.nav-link-header.current::after {
   content: "";
   position: absolute;
   left: 0;
@@ -115,16 +127,20 @@ a {
   background-color: #404bbf;
 }
 
-.nav-link:hover,
-.nav-link:focus,
-.contacs-link:hover,
-.contacs-link:focus {
+.nav-link-header:hover,
+.nav-link-header:focus,
+.nav-link-header.current {
   color: #404bbf;
 }
 
 .contacts {
+  display: block;
   font-style: normal;
-  margin-left: auto;
+}
+
+.contacs-list {
+  display: flex;
+  gap: 40px;
 }
 
 .contacs-link {
@@ -132,30 +148,19 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  display: block;
-  padding: 24px 0;
+  text-decoration: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-list {
-  display: flex;
-  align-items: center;
-  gap: 40px;
+.contacs-list .contacs-link:hover,
+.contacs-list .contacs-link:focus {
+  color: #404bbf;
 }
-
-.contacs-list {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
 /*Hero-image*/
 
 .page-hero {
-  background: #2e2f42;
-  height: 600px;
+  background-color: #2e2f42;
   max-width: 1440px;
-  display: flex;
   align-items: center;
   padding: 188px 0;
   margin-left: auto;
@@ -181,6 +186,18 @@ a {
   max-width: 496px;
 }
 
+.sec-heder,
+.big-title {
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  max-width: 496px;
+  margin: 0 auto 48px auto;
+  font-weight: 700;
+  text-align: center;
+}
+
 .button-hero {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -195,6 +212,7 @@ a {
   min-width: 169px;
   height: 56px;
   border: none;
+  margin: 0 auto;
   border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -294,7 +312,6 @@ a {
   align-items: flex-end;
   flex-wrap: nowrap;
   justify-content: center;
-  background-color: #ffffff;
   display: flex;
   gap: 24px;
 }
@@ -302,7 +319,7 @@ a {
 .team-li {
   border-radius: 0px 0px 4px 4px;
   background-color: #ffffff;
-  width: ((100% - 72px)/4);
+  width: calc((100% - 72px) / 4);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
@@ -348,11 +365,8 @@ a {
   display: flex;
   justify-content: center;
   gap: 24px;
-  flex-shrink: 0;
-  align-self: flex-end;
   list-style: none;
   margin-top: 8px;
-  padding: 0 16px;
   flex-direction: row;
   align-items: center;
 }
@@ -393,14 +407,12 @@ a {
 }
 
 .portfolio-title {
+  text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
-  letter-spacing: 0.02em;
-  text-align: center;
   color: #2e2f42;
-  background-color: #ffffff;
   text-transform: capitalize;
   margin-bottom: 72px;
 }
@@ -412,7 +424,7 @@ a {
 }
 
 .images-ourportfolio {
-  width: ((100% - 48px) / 3);
+  width: calc((100% - 48px) / 3);
   position: relative;
   overflow: hidden;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -455,8 +467,8 @@ a {
 }
 
 .container-ourportfolio {
-  padding: 16px;
-  border: 1px solid #e7e9fc;
+  padding: 32px 16px;
+  background-color: #ffffff;
 }
 
 .name-images-content {
@@ -470,10 +482,19 @@ a {
   color: #6c6c6c;
 }
 /*Footer*/
+
 .page-footer {
   background-color: #2e2f42;
-  font-family: "Raleway", sans-serif;
   padding: 100px 0;
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-logo-text {
+  margin-right: 120px;
 }
 
 .footer-logo {
@@ -488,13 +509,8 @@ a {
   margin-bottom: 16px;
 }
 
-.footer-container {
-  display: flex;
-  align-items: baseline;
-}
-
-.footer-logo-text {
-  margin-right: 120px;
+.footer-logo .logo-part {
+  color: #f4f4fd;
 }
 
 .footer-text {
@@ -503,17 +519,6 @@ a {
   color: #f4f4fd;
   letter-spacing: 0.02em;
   max-width: 264px;
-}
-
-.logo,
-.footer-logo {
-  display: inline-block;
-  margin-bottom: 16px;
-}
-
-.footer-icon {
-  margin-right: 208px;
-  height: 80px;
 }
 
 .footer-title {
@@ -556,22 +561,4 @@ a {
 
 .footer-icon {
   fill: #f4f4fd;
-}
-
-/*Общие стили*/
-.sec-heder,
-.big-title {
-  font-size: 56px;
-  line-height: 1.07;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  background-color: #2e2f42;
-  max-width: 496px;
-  margin: 0 auto 48px auto;
-  font-weight: 700;
-  text-align: center;
-}
-
-img {
-  display: block;
 }
